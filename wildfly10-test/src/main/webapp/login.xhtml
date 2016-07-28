@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="Test MBR" name="description" />
+		<meta content="mauriciobejaranorivera" name="author" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</f:facet>
+	<title>TEST LOGIN</title>
+</h:head>
+
+<h:body>
+
+	<h:form id="form001">
+	<h3>TEST LOGIN | ARQUILLIAN SELENIUM</h3>
+
+		<h:panelGrid columns="2">
+			<h:outputLabel value="User" />
+			<h:inputText id="inputUserLogin"
+				value="#{loginController.usuario.login}">
+				<f:ajax event="change" />
+			</h:inputText>
+
+			<h:outputLabel value="Password" />
+			<h:inputSecret id="inputPasswordLogin"
+				value="#{loginController.usuario.password}">
+				<f:ajax event="change" />
+			</h:inputSecret>
+
+			<h:commandButton id="buttonLogin"
+				actionListener="#{loginController.login()}" value="Ingresar" />
+		</h:panelGrid>
+
+	</h:form>
+
+</h:body>
+
+</html>
